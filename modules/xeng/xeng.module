@@ -1,0 +1,175 @@
+<?php
+/**
+ * @file xeng.module
+ * TODO: Enter file description here.
+ */
+
+include('xeng.inc');
+
+/**
+ * Implementation of hook_menu().
+ */
+function xeng_menu() { 
+  // Page: Home
+  $items['home'] = array(
+    'title' => 'Trang chủ',
+    'page callback' => 'xeng_home_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  // Page: Home
+  $items['play/%'] = array(
+    'title' => 'Play',
+    'page callback' => 'xeng_play_page',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  // Menu: List category container
+  $items['admin/xeng'] = array(
+      'title' => 'Xeng',
+      'description' => 'Manage xeng games and config.',
+      'page callback' => 'xeng_games_page',
+      'access arguments' => array('Xeng Admin'),
+      'weight' => -100,
+  );
+  // Task: Default task for list all container
+  $items['admin/xeng/list'] = array(
+      'title' => 'Xeng games',
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'weight' => -10,
+  );
+  // Task: Add game
+  $items['admin/xeng/add'] = array(
+      'title' => 'Add game',
+      'description' => 'Add new game to Xeng games list.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('xeng_game_form', 'add', NULL), //form, task, edit, gid
+      'access arguments' => array('Xeng Admin'),
+      'type' => MENU_LOCAL_TASK,
+      'file' => 'views/admin/form.inc',
+      'weight' => -9,
+  );
+  // Task: Edit game
+  $items['admin/xeng/edit/%'] = array(
+      'title' => 'Edit game',
+      'description' => 'Edit xeng game.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('xeng_game_form', 'edit', 3), //form, task, gid
+      'access arguments' => array('Xeng Admin'),
+      'type' => MENU_LOCAL_TASK,
+      'file' => 'views/admin/form.inc',
+      'weight' => -8,
+  );
+  // Task: Delete game
+  $items['admin/xeng/delete/%'] = array(
+      'title' => 'Delete game',
+      'description' => 'Delete xeng game.',
+      'page callback' => 'xeng_game_delete',
+      'page arguments' => array(3), //gid
+      'access arguments' => array('Xeng Admin'),
+      'type' => MENU_CALLBACK,
+  );
+  // Task: Xeng config
+  $items['admin/xeng/config'] = array(
+      'title' => 'Config',
+      'description' => 'The xeng game module config.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('xeng_game_config'),
+      'access arguments' => array('Xeng Admin'),
+      'type' => MENU_LOCAL_TASK,
+      'file' => 'views/admin/config.inc',
+      'weight' => -7,
+  );
+  // Page: Rebuild module
+  $items['admin/xeng/build'] = array(
+    'title' => 'Rebuild Xeng Module',
+    'page callback' => 'xeng_rebuild_page',
+    'access arguments' => array('Xeng Admin'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function xeng_perm() {
+  return array(
+      'Xeng Admin',
+      'Xeng Play',
+  );
+}
+
+function xeng_home_page() {
+  $data = array();
+  $data['games'] = xeng::getGames(1);
+  drupal_set_content('game', xeng_block_top());
+  drupal_set_content('chatbox', chatbox_block_chat());
+  return render(dirname(__FILE__) . '/views/game/home.inc', $data, false);
+}
+
+function xeng_play_page($gid) {
+  $game = xeng::getGame($gid);
+  
+  // Check $gid and $game
+  if($game == false) {
+      drupal_goto();
+  }
+  
+  $data = array();
+  $data['gid'] = $gid;
+  $data['game'] = $game;
+
+  // Update game views
+  xeng::pageView($gid);
+  
+  // Set page title
+  drupal_set_title('Play ' . $game->title);
+  
+  // Set region content
+  drupal_set_content('game', xeng_block_top());
+  drupal_set_content('chatbox', chatbox_block_chat());
+  
+  return render(dirname(__FILE__) . '/views/game/play.inc', $data, false);
+}
+
+/**
+ * @todo Delete xeng game from database
+ */
+function xeng_game_delete($gid) {
+  $game = xeng::getGame($gid);
+  if($game) {
+    xeng::deleteGame($gid);
+    drupal_set_message('Delete game ' . $game->name . ' complete !...');
+  } else {
+    drupal_set_message('The game id=' . $gid . ' is not exist.');
+  }
+  drupal_goto('admin/xeng');
+}
+
+/**
+ * @todo Trang hien thi danh sach cac game
+ */
+function xeng_games_page() {
+  $data = array();
+  $data['games'] = xeng::getGames();
+  return render(dirname(__FILE__) . '/views/admin/games.inc', $data, false);
+}
+
+/**
+ * @todo Rendering block TOP content
+ */
+function xeng_block_top() {
+  $data = array();
+  return render(dirname(__FILE__) . '/views/block/top.inc', $data, false);
+}
+
+/**
+ * @todo Rebuild Xeng Module Page
+ */
+function xeng_rebuild_page() {
+  module_disable(array('xeng'));
+  module_enable(array('xeng'));
+  menu_rebuild();
+
+  return 'Done !...';
+}

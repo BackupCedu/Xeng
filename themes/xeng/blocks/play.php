@@ -1,0 +1,1 @@
+<div class="content_play_game"></div>

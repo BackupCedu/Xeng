@@ -1,0 +1,225 @@
+<?php
+
+/**
+ * @file
+ * Support for configurable user profiles.
+ */
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function profile_menu() {
+  $items['profile'] = array(
+    'title' => 'Hồ sơ cá nhân',
+    'page callback' => 'profile_overview_page',
+    'page arguments' => array(1, 2),
+    'access arguments' => array('Profile Access'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['profile/details'] = array(
+    'title' => 'Thông tin cá nhân',
+    'page callback' => 'profile_detail_page',
+    'access arguments' => array('Profile Access'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['profile/password'] = array(
+    'title' => 'Đổi mật khẩu',
+    'page callback' => 'profile_password_page',
+    'access arguments' => array('Profile Access'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['login'] = array(
+    'title' => 'User Login',
+    'page callback' => 'profile_login_page',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'openid.php',
+  );
+  $items['login/form'] = array(
+    'title' => 'Profile Login Form Ajax',
+    'page callback' => 'profile_login_form',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/profile/build'] = array(
+    'title' => 'Profiles',
+    'description' => 'Rebuild Profile Module.',
+    'page callback' => 'profile_rebuild_page',
+    'access arguments' => array('Profile Admin'),
+    'type' => MENU_CALLBACK,
+  );  
+
+  return $items;
+}
+
+function profile_perm() {
+  return array(
+      'Profile Admin',
+      'Profile Access',
+  );
+}
+
+/**
+ * @todo Profile overview page
+ */
+function profile_overview_page() {
+  global $user;
+
+  if($user->uid == 0) {
+    drupal_goto();
+  }
+
+  $user->picture = $user->picture ? $user->picture : 'images/avatar.png';
+  $user->linkProfile = url('profile/details');
+
+  return render(dirname(__FILE__) . '/views/profile.inc', array(), false);
+}
+
+/**
+ * @todo Profile detail page
+ */
+function profile_detail_page() {
+  global $user;
+
+  if($user->uid == 0) {
+    drupal_goto();
+  }
+
+  $user->picture = $user->picture ? $user->picture : 'images/avatar.png';
+  $user->linkProfile = url('profile/details');
+
+  return render(dirname(__FILE__) . '/views/detail.inc', array(), false);
+}
+
+/**
+ * @todo Profile change password page
+ */
+function profile_password_page() {
+  global $user;
+
+  if($user->uid == 0) {
+    drupal_goto();
+  }
+
+  $user->picture = $user->picture ? $user->picture : 'images/avatar.png';
+  $user->linkProfile = url('profile/details');
+
+  if(!function_exists('user_profile_form')) {
+    module_load_include('inc', 'user', 'user.pages');  
+  }
+
+  return render(dirname(__FILE__) . '/views/password.inc', array(), false);
+}
+
+/**
+ * @todo Form Login Ajax 
+ */
+function profile_login_form() {
+  drupal_set_header('Content-Type: text/html');
+  print render(dirname(__FILE__) . '/views/login.inc', array(), false);
+  die();
+}
+
+/**
+ * @todo Profile login with Type page
+ * @param string $type Loai tai khoan login : Yahoo, Google, Facebook
+ */
+function profile_login_page($type) {
+  global $user;
+  global $base_url;
+
+  $list = array();
+  $list['google'] = 'https://www.google.com/accounts/o8/id';
+  $list['yahoo'] = 'https://me.yahoo.com';
+  $list['facebook'] = '';
+  $list['twitter'] = '';
+
+  $link = isset($list[$type]) ? $list[$type] : $list['google'];
+  $openid = new LightOpenID($base_url);
+
+  drupal_set_header('Content-Type: text/html');
+
+  if (!$openid->mode) {
+      $openid->identity = $link;
+      $openid->required = array('namePerson/first', 'namePerson/last', 'namePerson/friendly', 'contact/email', 'image');
+      header('Location: ' . $openid->authUrl());
+  } elseif ($openid->mode == 'cancel') {
+      echo 'Bạn đã hủy bỏ việc đăng nhập bằng tài khoản Google';
+  } else {
+      $attributes = $openid->getAttributes();
+      $email = $attributes['contact/email'];
+      $image = $attributes['image'];
+      $nameFirst = $attributes['namePerson/first'];
+      $nameLast = $attributes['namePerson/last'];
+      $nameFriendly = $attributes['namePerson/friendly'];
+
+      $name = $nameFirst ? $nameFirst . ' ' . $nameLast : $nameFriendly;
+      $picture = 'images/avatar.png';
+
+      if($type == 'yahoo') {
+        $id = preg_replace('/@(.*)/ism','', $email);
+        $picture = 'http://img.msg.yahoo.com/avatar.php?yids=' . $id;
+      }
+
+      $user->system = $type;
+      $user->title = $name;
+      $user->name = $email;
+      $user->mail = $email;
+      $user->created = time();
+      $user->access = time();
+      $user->login = time();
+      $user->status = 1;
+      $user->picture = $picture;
+      $user->init = '';
+      $user->roles[DRUPAL_AUTHENTICATED_RID] = 'authenticated user';
+      $_SESSION['user'] = $user;
+
+      $field = array(
+        'pass' => $type,
+        'name' => $name,
+        'mail' => $email,
+        //'init' => $type,
+        'status' => 1,
+        'picture' => $picture,
+        'firstname' => $nameFirst,
+        'lastname' => $nameLast,
+        'friendly' => $nameFriendly,
+        'system' => $type,
+      );
+
+      $user = user_save($user, $field, 'account');
+
+      if(!$user) {
+        $user = db_fetch_object(db_query('SELECT * FROM {users} WHERE mail=' . data::Quote($email)));
+      }
+
+      //trace($attributes);
+      //trace($user);
+
+      echo 'Bạn đã đăng nhập thành công bằng tài khoản Google <br />';
+      echo '<strong>Thông tin:</strong>';
+      echo "Tên: $nameFirst<br />";
+      echo "Họ: $nameLast<br />";
+      echo "friendly: $nameFriendly<br />";
+      echo "Email: $email<br />";
+      
+      echo '<script>';
+      echo 'window.opener.xeng.refresh();';
+      echo 'window.close();';
+      echo '</script>';
+  }  
+
+  die();
+}
+
+/**
+ * @todo Rebuild Profile Module
+ */
+function profile_rebuild_page() {
+  module_disable(array('profile'));
+  module_enable(array('profile'));
+  menu_rebuild();
+  return 'Done !...';
+}

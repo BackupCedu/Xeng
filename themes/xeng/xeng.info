@@ -1,0 +1,39 @@
+name = Xeng
+description = This theme use for Xeng.
+version = VERSION
+core = 6.x
+engine = phptemplate
+
+; Style information
+stylesheets[all][] = style.css
+stylesheets[print][] = print.css
+
+; Regions information
+
+; Header regions
+regions[topmenu] = Toolbar top menu
+regions[social] = Toolbar social panel
+
+regions[logo] = Logo region
+regions[mainmenu] = Main menu region
+
+; Advertisement regions
+regions[top] = Advertisement at Top
+regions[center] = Advertisement at Center
+regions[bottom] = Advertisement at Bottom
+
+; Content regions
+regions[promote] = The promote for hotest news
+regions[chatbox] = Region for chatting box
+regions[game] = Region for xeng game static
+
+regions[right] = Right sidebar
+regions[content] = Content
+
+regions[footer] = Footer
+
+; Information added by drupal.org packaging script on 2011-05-25
+version = "6.22"
+project = "drupal"
+datestamp = "1306357015"
+

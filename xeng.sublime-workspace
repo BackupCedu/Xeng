@@ -1,0 +1,453 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"co",
+				"color"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"for",
+				"form	<form>"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"base",
+				"base_url  (variable)"
+			],
+			[
+				"get",
+				"getCategories  (function)"
+			],
+			[
+				"db_f",
+				"db_fetch_object"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"m",
+				"margin-right"
+			],
+			[
+				"add",
+				"addClass  (function)"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"margin",
+				"margin-bottom:   (property)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/xampp/htdocs/xeng/themes/xeng/xeng.info",
+		"/E/xampp/htdocs/xeng/themes/xeng/template.php",
+		"/E/xampp/htdocs/xeng/profiles/default/default.profile",
+		"/E/xampp/htdocs/xeng/modules/xeng/xeng.module",
+		"/E/xampp/htdocs/xeng/themes/xeng/play.tpl.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/page.tpl.php",
+		"/E/xampp/htdocs/xeng/modules/chat/chat.module",
+		"/E/xampp/htdocs/xeng/sites/default/settings.php",
+		"/E/xampp/htdocs/xeng/modules/system/system.module",
+		"/E/xampp/htdocs/xeng/themes/xeng/block.tpl.php",
+		"/E/xampp/htdocs/xeng/themes/garland/block.tpl.php",
+		"/E/xampp/htdocs/xeng/modules/chat/views/front/chat.inc",
+		"/E/xampp/htdocs/xeng/index.php",
+		"/E/xampp/htdocs/xeng/includes/theme.inc",
+		"/E/xampp/htdocs/xeng/modules/chat/chat.info",
+		"/E/xampp/htdocs/xeng/modules/xeng/xeng.info",
+		"/E/xampp/htdocs/xeng/modules/profile/profile.info",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/chat.php",
+		"/E/xampp/htdocs/xeng/modules/chat/views/chat.inc",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/block/top.inc",
+		"/E/xampp/htdocs/xeng/css/login.css",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/form.inc",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/top.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/mark.php",
+		"/E/xampp/htdocs/xeng/modules/xeng/xeng.inc",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/play.inc",
+		"/E/xampp/htdocs/xeng/themes/xeng/user.tpl.php",
+		"/E/xampp/htdocs/xeng/modules/profile/views/profile.inc",
+		"/E/xampp/htdocs/xeng/modules/profile/views/detail.inc",
+		"/E/xampp/htdocs/xeng/modules/profile/views/password.inc",
+		"/E/xampp/htdocs/xeng/modules/profile/profile.module",
+		"/E/xampp/htdocs/xeng/modules/user/user.pages.inc",
+		"/E/xampp/htdocs/xeng/modules/user/user.module",
+		"/E/xampp/htdocs/xeng/includes/form.inc",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/login.php",
+		"/E/xampp/htdocs/xeng/themes/garland/page.tpl.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/footer.php",
+		"/E/xampp/htdocs/xeng/themes/rubik/style.css",
+		"/E/xampp/htdocs/xeng/themes/garland/style.css",
+		"/E/xampp/htdocs/xeng/themes/rubik/template.php",
+		"/E/xampp/htdocs/xeng/themes/rubik/page.tpl.php",
+		"/E/xampp/htdocs/xeng/modules/user/user.admin.inc",
+		"/E/xampp/htdocs/xeng/css/cache.css",
+		"/E/xampp/htdocs/xeng/js/cache.js",
+		"/H/source/xeng/payout_zeng7_0509/playgame.html",
+		"/E/xampp/htdocs/xeng/js/jquery.xeng.js",
+		"/E/xampp/htdocs/xeng/js/script.php",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/home.inc",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/games.inc",
+		"/E/xampp/htdocs/xeng/modules/xeng/views/config.inc",
+		"/E/xampp/htdocs/xeng/css/style.css",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/backend/views/type/list.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/backend/views/type/form.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/category/category.module",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/category/views/type/form.inc",
+		"/E/xampp/htdocs/drupal/modules/openid/openid.module",
+		"/E/xampp/htdocs/learn/login/openid.php",
+		"/E/xampp/htdocs/360kpop-news/modules/user/user.module",
+		"/E/xampp/htdocs/xeng/includes/framework.inc",
+		"/E/xampp/htdocs/360kpop-news/modules/user/user.admin.inc",
+		"/E/xampp/htdocs/learn/login/login.php",
+		"/E/xampp/htdocs/xeng/modules/profile/views/login.inc",
+		"/E/xampp/htdocs/xeng/modules/profile/openid.php",
+		"/E/xampp/htdocs/xeng/css/style.php",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/upload/upload.module",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/backend/mart.module",
+		"/E/xampp/htdocs/xeng/js/jquery.simplemodal.js",
+		"/E/xampp/htdocs/xeng/js/jquery.min.js",
+		"/E/xampp/htdocs/xeng/js/jquery.Jcrop.min.js",
+		"/E/xampp/htdocs/xeng/js/packer.php",
+		"/E/xampp/htdocs/xeng/modules/profile/Struct",
+		"/E/xampp/htdocs/learn/login/facebook-facebook-php-sdk-98f2be1/tests/tests.php",
+		"/E/xampp/htdocs/learn/login/facebook-facebook-php-sdk-98f2be1/tests/bootstrap.php",
+		"/E/xampp/htdocs/learn/login/facebook-facebook-php-sdk-98f2be1/examples/example.php",
+		"/E/xampp/htdocs/learn/login/facebook-facebook-php-sdk-98f2be1/examples/with_js_sdk.php",
+		"/E/xampp/htdocs/xeng/js/jquery.login.js",
+		"/E/xampp/htdocs/xeng/.htaccess",
+		"/E/xampp/htdocs/xeng/themes/xeng/maintenance-page.tpl.php",
+		"/E/xampp/htdocs/xeng/sites/default/xeng.settings.php",
+		"/C/Users/ROCK/Desktop/Cedu/server/conf/httpd.conf",
+		"/E/xampp/htdocs/xeng/modules/optimal/optimal.module",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/game.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/category.tpl.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/node.tpl.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/play.php",
+		"/E/xampp/htdocs/xeng/themes/xeng/blocks/payment.php",
+		"/E/xampp/htdocs/xeng/css/maintenance.css",
+		"/E/xampp/htdocs/ripper/underconstructer/notifyme/index.html",
+		"/E/xampp/htdocs/ripper/underconstructer/notifyme/css/maintenance.css",
+		"/E/xampp/htdocs/ripper/underconstructer/park/index.html",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/category/category.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/category/category.admin.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/convert/convert.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/convert/convert.module",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/backend/product.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/product/cart.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/product/product.inc",
+		"/E/xampp/htdocs/360kpop-shop/modules/360kpop/sites/sites.module",
+		"/E/xampp/htdocs/360kpop-shop/.gitignore",
+		"/D/xampp/htdocs/360kpop-shop/.gitignore",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/page.tpl.php",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/product.tpl.php",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/category.tpl.php",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/product/home.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/product/category.parent.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/upload/upload.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/convert/convert.inc",
+		"/D/xampp/htdocs/360kpop-shop/sites/default/settings.php",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/blocks/block.hot.php",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/api/sticky.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/backend/product.inc",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/blocks/block.regular.php",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/convert/convert.module",
+		"/D/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/backend/mart.module",
+		"/D/xampp/htdocs/360kpop-shop/index.php",
+		"/D/xampp/htdocs/360kpop-shop/includes/framework.inc",
+		"/D/xampp/apache/conf/httpd.conf",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/blocks/block.product.new.php",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/category/category.inc",
+		"/D/xampp/htdocs/360kpop-shop/js/nava/core.pack.js",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/product/product.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/api/newest.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/category/nested.inc",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/blocks/block.tag.php",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/api/viewGrid.inc",
+		"/D/xampp/htdocs/360kpop-shop/modules/360kpop/sites/views/api/selloff.inc",
+		"/D/xampp/htdocs/360kpop-shop/themes/nava/blocks/block.right.hot.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"E:\\xampp\\htdocs\\xeng\\modules\\user",
+			"E:\\xampp\\htdocs\\xeng\\modules\\category"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"top",
+			"0",
+			"xeng_get_games",
+			"user_authenticate",
+			"throughout ",
+			"Select your current local time",
+			"Locale settings",
+			"Confirm password",
+			"#description",
+			"#descripti",
+			"description",
+			"Username or e-mail address",
+			"Username or e-mai",
+			"user_edit_form",
+			".messages",
+			".error",
+			"function user_login_submit(",
+			"function user_login",
+			"function user_log",
+			"function user_login(&$form_state)",
+			"function user_login(&$form_state) {",
+			"user_login",
+			"type",
+			"item",
+			"gane",
+			"name",
+			"$type",
+			"description",
+			"alias",
+			"type",
+			"'types'",
+			"types",
+			"product_type_form",
+			"xeng_games",
+			"category_type_edit",
+			"must be called",
+			"user_authenticate_finalize",
+			"xenforo",
+			"border-bottom: 1px solid #C6C6C6;",
+			"drupal_set_header",
+			"profile_login_form",
+			"AllowOverride",
+			"php",
+			"array()",
+			"images/",
+			"images/game/",
+			"<php",
+			"<php echo url('play/1') ?>",
+			"play/1",
+			"playgame.html",
+			"../images/",
+			"category_type",
+			"removeCartItem",
+			"$data['product']",
+			"$history[$pid]",
+			"nove_save",
+			"\");",
+			"db->f(\"",
+			"##",
+			"title-selling",
+			".title-typical",
+			"http://nava.vn/(.*)\" title",
+			"go-top",
+			"sites_api",
+			"images",
+			"</a>\n    |",
+			"supplier",
+			"insertDataList",
+			"getDataByName",
+			"die",
+			"getNodeData",
+			"getNodeData($filt);",
+			"getNodeData();",
+			"getNodeData($filter);",
+			"style",
+			"form-layout-default",
+			"nodeformscols_field_placements",
+			"_nodeformscols_default_field_placements",
+			"content",
+			"fieldset-content",
+			"secondary-tab",
+			"drupal_render",
+			"product_types_fields_page",
+			"172",
+			"$item->",
+			"fields",
+			"getInt",
+			"    $uid = router::getInt('uid', NULL);\n    $cid = router::getInt('cid', NULL);\n    $cidm = router::getInt('cidm', NULL);\n    $page = router::getInt('page', 1);\n    $limit = router::getInt('limit', 25);\n    $status = router::getString('status', NULL);\n    $nodes = router::getParam('nodes');\n    $op = router::getString('op', NULL);\n    $title = router::getString('title', NULL);",
+			"$tag->",
+			"container",
+			"container->type = trim($form_state['values']['category']['type']);\n    $container->name = trim($form_state['values']['category']['name']);\n    $container->module = trim($form_state['values']['category']['module']);\n    $container->node = $form_state['values']['node'];\n    $container->description = trim($form_state['values']['category']['description']);\n    $container->status = $form_state['values']['category']['status'];\n    $container",
+			"container",
+			"'tag'",
+			"tag_form",
+			"data",
+			"php -l"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'game'",
+			"xeng_game_form",
+			"xeng_game_config",
+			"<?php echo $base_url ?>/images/",
+			"<?php echo $base_url ?>/images/game/",
+			"<?php",
+			"<?php echo url('play/1') ?>",
+			"<php echo url('play/1') ?>",
+			"play/1",
+			"../images/maintenance/",
+			"#\" title",
+			"$field->",
+			"$data->",
+			"'data'",
+			"data_form"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true
+}

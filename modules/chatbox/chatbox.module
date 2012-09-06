@@ -1,0 +1,70 @@
+<?php
+/**
+ * @file chat.module
+ * TODO: Enter file description here.
+ * https://blueimp.net/ajax/
+ * http://css-tricks.com/jquery-php-chat/
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
+function chatbox_menu() { 
+  $items = array();
+
+  // Menu: Admin chatbox overview page
+  $items['admin/chat'] = array(
+      'title' => 'Chatbox',
+      'description' => 'Manage chatbox system.',
+      'page callback' => 'chatbox_overview_page',
+      'access arguments' => array('Chatbox Admin'),
+      'weight' => -100,
+  );  
+  // Page: Rebuild module
+  $items['admin/chat/build'] = array(
+    'title' => 'Rebuild Chatbox Module',
+    'page callback' => 'chatbox_rebuild_page',
+    'access arguments' => array('Chatbox Admin'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function chatbox_perm() {
+  return array(
+      'Chatbox Admin',
+      'Chatbox Chat',
+      'Chatbox Ban',
+      'Chatbox Kick',
+      'Chatbox Edit Any',
+      'Chatbox Edit Own',
+      'Chatbox Delete Any',
+      'Chatbox Delete Own',
+  );
+}
+
+/**
+ * @todo : Admin chatbox overview page
+ */
+function chatbox_overview_page() {
+    return 'Welcome to chatbox Overview page';
+}
+/**
+ * @todo Rendering block chatting content
+ */
+function chatbox_block_chat() {
+  $data = array();
+  return  render(dirname(__FILE__) . '/views/front/chatbox.inc', $data, false);
+}
+
+/**
+ * @todo Rebuild chatbox module
+ */
+function chatbox_rebuild_page() {
+  module_disable(array('chatbox'));
+  module_enable(array('chatbox'));
+  menu_rebuild();
+
+  return 'Done !...';    
+}
